@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link 
+          rel="stylesheet" 
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+          <link rel="stylesheet" href="CSS.css" type="Text/css">
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js" 
+          integrity="sha256-bd8XIKzrtyJ1O5Sh3Xp3GiuMIzWC42ZekvrMMD4GxRg=" crossorigin="anonymous"></script>
+          <title>HTML SESSIONS</title>
+       <body>
+         <div class = "maincontainer">
+             <img src="logoImage.png" alt="2dolist">
+             <center> <h1>Register yourself</h1></center>
+             <div class = "formcontainer">
+                <div class="row">
+                    <div class = "col-sm-6" >
+                       <label  class = "Infieldname" for="FirstName" >FirstName</label><br>
+                        <input type="text" class="fields" id = "FirstName" placeholder="Enter your first name"
+                        onclick="hideerrormsg('errmsg')"/><br />
+                        <span id = "errmsg"> </span> 
+                    </div>
+                    <div class = "col-sm-6" >
+                        <label  class = "Infieldname" for="LastName">LastName</label><br>
+                         <input type="text" class="fields" id = "LastName" placeholder="Enter your Last name" 
+                         onclick="hideerrormsg('errmsg1')"/><br />
+                         <span id = "errmsg1"> </span> 
+                    </div>
+                </div>
+               
+                <div class="row">
+                    <div class = "col-sm-6" >
+                        <label class = "Infieldname" for="Dob">Date of Birth</label><br>
+                        <input type="Date" class="fields" id = "Dob"  onclick="hideerrormsg('errmsg2')"><br />
+                        <span id = "errmsg2"> </span> 
+                    </div>
+                    <div class = "col-sm-6" >
+                        <label class = "Infieldname" for="Gender">Gender</label><br>
+                        <input   name="gender" type="Radio" id = "M" onclick="hideerrormsg('errmsg3')">
+                        <label class = "Infieldname" for = "M">male</label><br />
+                        <input name = "gender" type="Radio" id = "F" onclick="hideerrormsg('errmsg3')">
+                        <label class = "Infieldname" for = "F">female</label><br />
+                        <span id = "errmsg3"> </span> 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class = "col-sm-6" >
+                        <label  class = "Infieldname" for="Email">Email</label><br>
+                        <input type="Email" class="fields" id = "Email" placeholder="Enter your Email" 
+                        onclick="hideerrormsg('errmsg4')"><br />
+                        <span id = "errmsg4"> </span>
+                    </div>
+                    <div class = "col-sm-6" >
+                        <label class = "Infieldname" for="Phonenumber">phone number</label><br>
+                        <input type="number" class="fields" id = "Phonenumber"  min="10" placeholder="your phone number"
+                        onclick="hideerrormsg('errmsg5')"><br>
+                        <span id = "errmsg5"> </span>
+                    </div>
+                </div>
+               <div class="row">
+                    <div class = "col-sm-12">
+                        <label class = "Infieldname" for="Subject">select your subject</label><br>
+                        <select id="sub"  class="selectclass"  onclick="hideerrormsg('errmsg6')">
+                            <option value="">--None--</option>
+                            <option value="maths" >maths</option>
+                            <option value="pp">pp</option>
+                            <option value="DAA">DAA</option>
+                        </select>
+                        <span id = "errmsg6"> </span>
+                    </div>               
+                </div>
+                <div class="row">
+                    <div class = "col-sm-12" > 
+                        <label class="container">to agree with <a href="https://www.google.com" 
+                            target="_blank">terms and condition</a> please  check the box
+                            <input type="checkbox" checked="checked">
+                            <span class="checkmark"></span>
+                        </label>
+                        <br>
+                        <input class="btn" onclick ="myfunction()"  type="submit">
+                    </div>
+                </div>           
+            </div>   
+        </div>  
+        <script src="Script.js"></script>
+       </body>
+    </html>
