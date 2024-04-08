@@ -1391,11 +1391,7 @@ a:hover, a:active, a:focus {
   }
 }
 
-@media (max-width: 1024px) {
-  .main-wraper {
-    margin: 65px auto 0;
-  }
-}
+
 
 @media (max-width: 768px) {
   .navbar {
