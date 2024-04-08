@@ -67,10 +67,12 @@
         
         MainApp.prototype.hideCustomCursor = function () {
             $('#custom-cursor').hide();
+            $('body').css('cursor', 'auto'); // Show normal cursor
         };
         
         MainApp.prototype.showCustomCursor = function () {
             $('#custom-cursor').show();
+            $('body').css('cursor', 'none'); // Hide normal cursor
         };
         
         
