@@ -1402,9 +1402,6 @@ a:hover, a:active, a:focus {
   .col-sm-6 {
     width: 100% !important;
   }
-  .main-wraper {
-    margin: 68px auto 0;
-  }
   .container-filter li a {
     padding: 5px 8px;
   }
