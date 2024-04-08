@@ -883,6 +883,20 @@ a:hover, a:active, a:focus {
   position: relative;
 }
 
+.custom-cursor-enabled {
+  cursor: none; /* Disable default cursor */
+}
+
+#custom-cursor {
+  position: absolute;
+  width: 50px; /* Set the width of the cursor */
+  height: 50px; /* Set the height of the cursor */
+  background-image: url('../images/cursor3.png'); /* Set the surfer image */
+  background-size: cover;
+  z-index: 9999; /* Ensure it's on top of other elements */
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
 .section-md {
   padding-right: 20px;
   padding-bottom: 5px;

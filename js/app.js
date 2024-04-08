@@ -11,13 +11,69 @@
         //===== ripples =====
 
         MainApp.prototype.initprofileRipple = function () {
-
-           $('#profile_ripple').ripples({
+            var self = this; // Store reference to `this` for later use
+        
+            $('#profile_ripple').ripples({
                 resolution: 512,
                 dropRadius: 20, //px
                 perturbance: 0.04,
-            });            
-        },
+            }); 
+            
+            // Initialize custom cursor
+            this.initCustomCursor();
+        
+            // Attach mousemove event listener to #profile_ripple
+            $('#profile_ripple').on('mousemove', function(e) {
+                self.updateCustomCursor(e.pageX, e.pageY); // Use `self` to reference the MainApp instance
+            });
+        
+            // Show custom cursor when mouse enters the #profile_ripple div
+            $('#profile_ripple').on('mouseenter', function() {
+                self.showCustomCursor();
+            });
+        
+            // Hide custom cursor when mouse leaves the #profile_ripple div
+            $('#profile_ripple').on('mouseleave', function() {
+                self.hideCustomCursor();
+            });
+        };
+        
+        // surfer
+        
+        MainApp.prototype.initCustomCursor = function () {
+            var $customCursor = $('<div id="custom-cursor"></div>');
+            $('#profile_ripple').append($customCursor); // Append to #profile_ripple
+        
+            // Hide the default cursor when hovering over #profile_ripple
+            $('#profile_ripple').on('mouseenter', function() {
+                $('body').css('cursor', 'none');
+            });
+        };
+        
+        MainApp.prototype.updateCustomCursor = function (x, y) {
+            var $customCursor = $('#custom-cursor');
+            var $profileRipple = $('#profile_ripple');
+        
+            // Calculate the relative position of the mouse cursor within the #profile_ripple div
+            var offsetX = x - $profileRipple.offset().left;
+            var offsetY = y - $profileRipple.offset().top;
+        
+            // Set the position of the custom cursor within the bounds of the #profile_ripple div
+            $customCursor.css({
+                top: offsetY + 'px',
+                left: offsetX + 'px',
+            });
+        };
+        
+        MainApp.prototype.hideCustomCursor = function () {
+            $('#custom-cursor').hide();
+        };
+        
+        MainApp.prototype.showCustomCursor = function () {
+            $('#custom-cursor').show();
+        };
+        
+        
 
         //=====counter =====
        
