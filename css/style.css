@@ -19,6 +19,12 @@
   line-height: 24px;
 }
 
+.page-background{
+  background-color: #eaf0f7;
+}
+
+
+
 .btn:focus {
   -webkit-box-shadow: 0 0 0 0.2rem #eff2f9;
           box-shadow: 0 0 0 0.2rem #eff2f9;
@@ -907,6 +913,8 @@ a:hover, a:active, a:focus {
 .main-wraper {
   background-color: #ffffff;
   width: 100%;
+  border-radius : 3.6px;
+  overflow: hidden;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
@@ -963,6 +971,16 @@ a:hover, a:active, a:focus {
 
 .bg-profile {
   background-color: #1a253f;
+  position: relative;
+}
+
+.bg-profile svg.fish {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* To place the SVG behind the content */
 }
 
 .cd-headline {
@@ -1398,6 +1416,148 @@ a:hover, a:active, a:focus {
 .footer-area {
   background-color: #f3f6f7;
 }
+
+
+/* fish animation */
+
+/* .background-filter{
+  position : absolute;
+  top: 0;
+  left : 0;
+  height : 100%;
+  width : 100%;
+  border: 10px solid red;
+} */
+
+svg#fish {
+  top: 5em;
+}
+/* Fish Animation */
+svg.fish{
+  overflow:hidden;
+  opacity: 0.08;
+}
+
+@-webkit-keyframes swim
+{
+  0% { transform: translateX(-235px); }
+  100% { transform: translateX(100%); }
+}
+
+/* @keyframes swim
+{
+	0% {margin-left: -235px}
+	70% {margin-left: 100%;}
+	100% {margin-left: 100%;}
+} */
+
+@keyframes swim {
+  0% { transform: translateX(-235px); }
+  100% { transform: translateX(100%); }
+}
+
+.fish{
+	width: 235px;
+	height: 104px;
+	margin-left: -5px;
+	position: absolute;	
+	animation: swim 20s;
+	-webkit-animation: swim 20s;
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	-webkit-animation-timing-function: linear;
+}
+
+svg #fish1,
+svg #fish2,
+svg #fish3,
+svg #fish4,
+svg #fish5,
+svg #fish6 {
+fill:#eaf0f7;
+  
+    -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+svg #fish2{
+	animation-delay: 0.5s;
+	-webkit-animation-delay: 0.5s;
+}
+
+svg #fish3{
+	animation-delay: 0.2s;
+	-webkit-animation-delay: 0.2s;
+}
+
+svg #fish4{
+	animation-delay: 0.4s;
+	-webkit-animation-delay: 0.4s;
+}
+
+svg #fish5{
+	animation-delay: 0.1s;
+	-webkit-animation-delay: 0.1s;
+}
+
+svg #fish6{
+	animation-delay: 0.3s;
+	-webkit-animation-delay: 0.3s;
+}
+
+/**/
+@-moz-keyframes bounce {
+  0%, 50%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+  25% {
+    -moz-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+  75% {
+    -moz-transform: translateY(-3px);
+    transform: translateY(-3px);
+  }
+}
+@-webkit-keyframes bounce {
+  0%, 50%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  25% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+  75% {
+    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px);
+  }
+}
+@keyframes bounce {
+  0%, 50%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  25% {
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+  75% {
+    -moz-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px);
+  }
+}
+
+/*END Fish Animation*/
 
 @media (min-width: 1200px) {
   .main-wraper {
